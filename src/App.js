@@ -14,9 +14,10 @@ function App() {
     const erembelsenData = erembleh();
     setPlayers([...erembelsenData]);
   };
-  // const delete=()=>{
-  //   players.pop({})
-  // }
+  const removeElement = (index) => {
+    const player = players.filter((_, i) => i !== index);
+    setPlayers(player);
+  };
   const darah = (name) => {
     console.log("darah ajillaa name=", name);
     const playerIndex = players.findIndex((player) => player.name === name);
