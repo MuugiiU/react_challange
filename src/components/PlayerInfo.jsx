@@ -3,9 +3,10 @@ export default function PlayerInfo(props) {
   const { player, darah, hasah } = props;
   return (
     <div>
-      {player.name}
+      {/* <button onClick={()=> delete()}>Delete</button> */}
+      <h2>{player.name}</h2>
       <button onClick={() => hasah(player.name)}>-</button>
-      {player.score}
+      <p>{player.score}</p>
       <button onClick={() => darah(player.name)}>+</button>
     </div>
   );

@@ -7,8 +7,16 @@ const dt = data.sort((player1, player2) => {
 function App() {
   const [players, setPlayers] = useState(dt);
 
-  const add = () => {};
-
+  const add = () => {
+    let ner = prompt("neree oruulna uu");
+    let onoo = parseInt(prompt("onoogoo oruulna uu"));
+    players.push({ name: ner, score: onoo });
+    const erembelsenData = erembleh();
+    setPlayers([...erembelsenData]);
+  };
+  // const delete=()=>{
+  //   players.pop({})
+  // }
   const darah = (name) => {
     console.log("darah ajillaa name=", name);
     const playerIndex = players.findIndex((player) => player.name === name);
@@ -27,8 +35,11 @@ function App() {
       return player2.score - player1.score;
     });
   };
+
   return (
     <div className="name">
+      <button onClick={() => add()}>add</button>
+
       {players.map((player, index) => {
         return (
           <div key={index}>
