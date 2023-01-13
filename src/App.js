@@ -8,15 +8,15 @@ function App() {
   const [players, setPlayers] = useState(dt);
 
   const add = () => {
-    let ner = prompt("neree oruulna uu");
-    let onoo = parseInt(prompt("onoogoo oruulna uu"));
+    let ner = prompt("Нэрээ оруулна уу");
+    let onoo = parseInt(prompt("Оноогоо оруулна уу"));
     players.push({ name: ner, score: onoo });
     const erembelsenData = erembleh();
     setPlayers([...erembelsenData]);
   };
-  const removeElement = (index) => {
-    const player = players.filter((_, i) => i !== index);
-    setPlayers(player);
+  const removeElement = (id) => {
+    const newPlayer = players.filter((player) => player.id !== id);
+    setPlayers(newPlayer);
   };
   const darah = (name) => {
     console.log("darah ajillaa name=", name);
@@ -39,12 +39,19 @@ function App() {
 
   return (
     <div className="name">
-      <button onClick={() => add()}>add</button>
+      <button className="add" onClick={() => add()}>
+        Шинэ тоглогч нэмэх
+      </button>
 
-      {players.map((player, index) => {
+      {players.map((player, id) => {
         return (
-          <div key={index}>
-            <PlayerInfo player={player} darah={darah} hasah={hasah} />
+          <div key={player.id}>
+            <PlayerInfo
+              player={player}
+              darah={darah}
+              hasah={hasah}
+              removeElement={removeElement}
+            />
           </div>
         );
       })}

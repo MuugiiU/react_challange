@@ -4,15 +4,40 @@
 body {
   margin: 0 auto;
   padding: 0;
+  color: blueviolet;
+}
+.flex {
+  display: flex;
 }
 .name {
   font-size: 1.5rem;
   text-align: center;
-  padding: 10px;
+
   justify-content: space-between;
   margin-top: 100px;
+}
+.ner {
+  font-size: 2.5rem;
+}
+.onoo {
+  font-size: 2rem;
 }
 button {
   border: transparent;
   border-radius: 10px;
+  width: 250px;
+  height: 20px;
+  margin: 50px;
+  background: transparent;
+  font-size: 18px;
+}
+.delete {
+  color: red;
+}
+.add {
+  width: 300px;
+  height: 100px;
+  color: cornflowerblue;
+  margin-bottom: 50px;
+  font-size: 40px;
 }
